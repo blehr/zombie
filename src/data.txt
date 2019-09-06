@@ -1,0 +1,29 @@
+// console.log("Friday June 7, 2019 12:00 am ", new Date(Date.UTC(2019, 5, 7, 00, 00)).getTime())
+  // console.log("Friday June 7, 2019 1:00 am ", new Date(Date.UTC(2019, 5, 7, 01, 00)).getTime())
+  // console.log("Friday June 7, 2019 2:00 am ", new Date(Date.UTC(2019, 5, 7, 02, 00)).getTime())
+  // console.log("Friday June 7, 2019 4:00 am ", new Date(Date.UTC(2019, 5, 7, 04, 00)).getTime())
+  // console.log("Friday June 7, 2019 6:00 am ", new Date(Date.UTC(2019, 5, 7, 06, 00)).getTime())
+  // console.log("Friday June 7, 2019 8:00 am ", new Date(Date.UTC(2019, 5, 7, 08, 00)).getTime())
+  // console.log("Friday June 7, 2019 10:00 am ", new Date(Date.UTC(2019, 5, 7, 10, 00)).getTime())
+  // console.log("Friday June 7, 2019 12:00 pm ", new Date(Date.UTC(2019, 5, 7, 12, 00)).getTime())
+  // console.log("Friday June 7, 2019 2:00 pm ", new Date(Date.UTC(2019, 5, 7, 14, 00)).getTime())
+  // console.log("Friday June 7, 2019 4:00 pm ", new Date(Date.UTC(2019, 5, 7, 16, 00)).getTime())
+  // console.log("Friday June 7, 2019 6:00 pm ", new Date(Date.UTC(2019, 5, 7, 18, 00)).getTime())
+  // console.log("Friday June 7, 2019 8:00 pm ", new Date(Date.UTC(2019, 5, 7, 20, 00)).getTime())
+  // console.log("Friday June 7, 2019 10:00 pm ", new Date(Date.UTC(2019, 5, 7, 22, 00)).getTime())
+  // console.log("Friday June 7, 2019 11:00 pm ", new Date(Date.UTC(2019, 5, 7, 23, 00)).getTime())
+
+  // Friday June 7, 2019 12:00 am  1559865600000
+  // Friday June 7, 2019 1:00 am  1559869200000
+  // Friday June 7, 2019 2:00 am  1559872800000
+  // Friday June 7, 2019 4:00 am  1559880000000
+  // Friday June 7, 2019 6:00 am  1559887200000
+  // Friday June 7, 2019 8:00 am  1559894400000
+  // Friday June 7, 2019 10:00 am  1559901600000
+  // Friday June 7, 2019 12:00 pm  1559908800000
+  // Friday June 7, 2019 2:00 pm  1559916000000
+  // Friday June 7, 2019 4:00 pm  1559923200000
+  // Friday June 7, 2019 6:00 pm  1559930400000
+  // Friday June 7, 2019 8:00 pm  1559937600000
+  // Friday June 7, 2019 10:00 pm  1559944800000
+  // Friday June 7, 2019 11:00 pm  1559948400000

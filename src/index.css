@@ -44,6 +44,23 @@ body {
   border-radius: 5px;
 }
 
+.legend-g {
+  cursor: pointer;
+}
+
+.fa-eye {
+  margin-right: 8px;
+}
+
+.legend-g:hover {
+  color: red;
+}
+
+.number-infected {
+  color: #b51010;
+  font-weight: bold;
+}
+
 .circle-marker {
   fill: red;
   opacity: 0.5;
@@ -55,6 +72,9 @@ body {
   pointer-events: none;
 }
 
+.tick text {
+  font-size: .8rem;
+}
 
 
 
