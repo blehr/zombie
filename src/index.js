@@ -25,11 +25,12 @@ import "leaflet.markercluster/dist/leaflet.markercluster";
 
 // bounds for state of Ohio
 const bounds = [[38.403202, -84.820159], [41.977523, -80.518693]];
-let ohio, counties, zombies, legendG, x, axisG, rangeTitle, brush, brushHandle;
+let ohio, counties, zombies, legendG, x, axisG, rangeTitle, brush, brushHandle, features;
 
 let map = renderMap(bounds);
 
 loadData().then(res => {
+  console.log(res.zombies)
   ohio = res.ohio;
   counties = res.counties;
   zombies = res.zombies;
@@ -74,7 +75,6 @@ const render = (map, ohio, counties, zombies) => {
       d1[0] = Math.floor(d0[0]);
       d1[1] = d1[0] + 1;
     }
-
     setRangeTitleText(rangeTitle, d1[0], d1[1]);
     updateMarkersForBrush(d1[0], d1[1]);
 
@@ -85,6 +85,8 @@ const render = (map, ohio, counties, zombies) => {
         "transform",
         "translate(" + [d3.event.selection[1], -height / 4] + ")"
       );
+
+      // map.fitBounds(features)
   };
 
   [brush, brushHandle] = createBrush(
@@ -124,16 +126,17 @@ const render = (map, ohio, counties, zombies) => {
   };
 
   let markerClusters;
+
   const updateMarkersForBrush = (start, end) => {
     map.removeLayer(markerClusters);
 
-    markerClusters = new L.MarkerClusterGroup();
+    markerClusters = new L.MarkerClusterGroup({animateAddingMarkers: true});
 
-    const initial = getFilteredMarkers(start, end, zombies);
-    rScale.domain(createRScaleDomain(initial));
-    updateLegend(legendG, initial, legendClick);
+    features = getFilteredMarkers(start, end, zombies);
+    rScale.domain(createRScaleDomain(features));
+    updateLegend(legendG, features, legendClick);
 
-    initial.forEach(m => {
+    features.forEach(m => {
       const popup = `${m.properties.location_name}: Number Infected: ${m.properties.current_number_infected}`;
 
       const marker = L.marker(
@@ -150,7 +153,7 @@ const render = (map, ohio, counties, zombies) => {
     const initial = getFilteredMarkers(null, null, zombies);
     rScale.domain(createRScaleDomain(initial));
     updateLegend(legendG, initial, legendClick);
-    markerClusters = L.markerClusterGroup();
+    markerClusters = L.markerClusterGroup({animateAddingMarkers: true});
 
     initial.forEach(m => {
       const popup = `${m.properties.location_name}: Number Infected: ${m.properties.current_number_infected}`;
@@ -164,9 +167,18 @@ const render = (map, ohio, counties, zombies) => {
     });
 
     map.addLayer(markerClusters);
+
+    // markerClusters.eachLayer(function(layer){
+    //   console.log(layer)
+    // });
+   
   };
+
+  
 
   // for initial display
   setRangeTitleText(rangeTitle, initialExtent[0], initialExtent[1]);
   addInitialMarkers();
+
+  
 };

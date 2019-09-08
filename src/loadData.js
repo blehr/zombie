@@ -4,7 +4,7 @@ const loadData = () => {
   return Promise.all([
     d3.json("json/ohio.json"),
     d3.json("json/ohio-counties.json"),
-    d3.json("json/zombie-geo.json")
+    d3.json("json/created-zombie.json")
   ]).then(([ohio, counties, zombies]) => {
     return {
       ohio,
