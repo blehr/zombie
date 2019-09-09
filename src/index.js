@@ -14,6 +14,9 @@ import {
   createBrush
 } from "./brush";
 import { getFilteredMarkers } from "./helpers";
+import ohio from './json/ohio.json';
+import counties from './json/ohio-counties.json'
+import zombies from './json/created-zombie.json'
 
 // Import images directly that got missed via the CSS imports above.
 import "leaflet/dist/images/marker-icon-2x.png";
@@ -25,10 +28,10 @@ import "leaflet.markercluster/dist/leaflet.markercluster";
 
 // bounds for state of Ohio
 const bounds = [[38.403202, -84.820159], [41.977523, -80.518693]];
-let ohio,
-  counties,
-  zombies,
-  legendG,
+// let ohio,
+//   counties,
+//   zombies,
+ let legendG,
   x,
   axisG,
   rangeTitle,
@@ -38,14 +41,15 @@ let ohio,
 
 let map = renderMap(bounds);
 
-loadData().then(res => {
-  console.log(res.zombies);
-  ohio = res.ohio;
-  counties = res.counties;
-  zombies = res.zombies;
+// loadData().then(res => {
+//   console.log(res.zombies);
+//   ohio = res.ohio;
+//   counties = res.counties;
+//   zombies = res.zombies;
 
-  render(map, ohio, counties, zombies);
-});
+//   render(map, ohio, counties, zombies);
+// });
+
 
 const render = (map, ohio, counties, zombies) => {
   addStateAndCountiesToMap(map, ohio, counties);
@@ -186,3 +190,5 @@ const render = (map, ohio, counties, zombies) => {
   setRangeTitleText(rangeTitle, initialExtent[0], initialExtent[1]);
   addInitialMarkers();
 };
+
+render(map, ohio, counties, zombies);
