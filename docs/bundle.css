@@ -757,6 +757,7 @@ body {
 
 .legend-g {
   cursor: pointer;
+  color: black;
 }
 
 .fa-eye {
