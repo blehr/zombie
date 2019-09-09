@@ -7,23 +7,23 @@ const locations = [
   },
   {
     location_name: "Pettit's",
-    coordinates: [-83.3975342, 39.6067609]
+    coordinates: [-83.3969592, 39.606607]
   },
   {
     location_name: "Walmart",
-    coordinates: [-83.4581394, 39.5224967]
+    coordinates: [-83.4560865, 39.5225792]
   },
   {
     location_name: "Kroger",
-    coordinates: [-83.4481005, 39.5340456]
+    coordinates: [-83.4459818, 39.5342875]
   },
   {
     location_name: "Jeffersonville Pool",
-    coordinates: [-83.5700062, 39.6543082]
+    coordinates: [-83.5679579, 39.6543824]
   },
   {
     location_name: "Flying J Travel Center",
-    coordinates: [-83.5408617, 39.6462517]
+    coordinates: [-83.5388228,39.646335]
   }
 ];
 
@@ -35,7 +35,7 @@ const generateRandomTimeStamp = () => {
       2019,
       5,
       7,
-      Math.floor(Math.random() * 25),
+      Math.floor(Math.random() * 24),
       Math.floor(Math.random() * 59)
     )
   ).getTime();
