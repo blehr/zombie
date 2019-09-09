@@ -147,6 +147,7 @@ const render = (map, ohio, counties, zombies) => {
       markerClusters.addLayer(marker);
     });
     map.addLayer(markerClusters);
+    map.fitBounds(markerClusters.getBounds())
   };
 
   const addInitialMarkers = () => {
@@ -167,11 +168,7 @@ const render = (map, ohio, counties, zombies) => {
     });
 
     map.addLayer(markerClusters);
-
-    // markerClusters.eachLayer(function(layer){
-    //   console.log(layer)
-    // });
-   
+    map.fitBounds(markerClusters.getBounds())
   };
 
   

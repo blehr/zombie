@@ -60,7 +60,6 @@ const zombieDataFeatures = locations.map((d, i) => {
   return locationFeatures;
 });
 
-console.log(zombieDataFeatures)
 let f = []
 const features = zombieDataFeatures.forEach(d => {
   d.forEach(f1 => f.push(f1))
