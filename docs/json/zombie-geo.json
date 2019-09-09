@@ -1,0 +1,162 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 1,
+        "location_name": "Bloomingburg Trailer Park",
+        "timestamp": 1559869200000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.394563, 39.610193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 3,
+        "location_name": "Bloomingburg Trailer Park",
+        "timestamp": 1559872800000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.394563, 39.610193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 8,
+        "location_name": "Bloomingburg Trailer Park",
+        "timestamp": 1559880000000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.394563, 39.610193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 13,
+        "location_name": "Bloomingburg Trailer Park",
+        "timestamp": 1559887200000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.394563, 39.610193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 17,
+        "location_name": "Bloomingburg Trailer Park",
+        "timestamp": 1559894400000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.394563, 39.610193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 26,
+        "location_name": "Bloomingburg Trailer Park",
+        "timestamp": 1559901600000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.394563, 39.610193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 33,
+        "location_name": "Bloomingburg Trailer Park",
+        "timestamp": 1559908800000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.394563, 39.610193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 2,
+        "location_name": "Pettit's",
+        "timestamp": 1559872800000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.3975342, 39.6067609]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 4,
+        "location_name": "Pettit's",
+        "timestamp": 1559880000000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.3975342, 39.6067609]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 8,
+        "location_name": "Pettit's",
+        "timestamp": 1559887200000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.3975342, 39.6067609]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 24,
+        "location_name": "Pettit's",
+        "timestamp": 1559894400000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.3975342, 39.6067609]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 26,
+        "location_name": "Pettit's",
+        "timestamp": 1559901600000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.3975342, 39.6067609]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "current_number_infected": 42,
+        "location_name": "Pettit's",
+        "timestamp": 1559908800000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.3975342, 39.6067609]
+      }
+    }
+    
+  ]
+}
