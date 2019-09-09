@@ -56,7 +56,7 @@ export const updateLegend = (selection, items, legendClick) => {
       .attr("height", 24)
       .attr('x', 0)
       .attr('y', 0)
-      .html(`<i class='fas fa-eye'></i> <span><span class="number-infected">${d.properties.current_number_infected}</span> : Infected - ${d.properties.location_name}</span>`)
+      .html(`<span><i class='fas fa-eye'></i> <span class="number-infected">${d.properties.current_number_infected}</span> : Infected - ${d.properties.location_name}</span>`)
       .on("click", () => legendClick(d))
   });
 };
