@@ -54,6 +54,8 @@ export const updateLegend = (selection, items, legendClick) => {
       .append("foreignObject")
       .attr("width", 320)
       .attr("height", 24)
+      .attr('x', 0)
+      .attr('y', 0)
       .html(`<i class='fas fa-eye'></i> <span><span class="number-infected">${d.properties.current_number_infected}</span> : Infected - ${d.properties.location_name}</span>`)
       .on("click", () => legendClick(d))
   });
