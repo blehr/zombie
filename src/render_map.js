@@ -6,7 +6,8 @@ export const renderMap = (bounds) => {
   const map = L.map("map", {
     maxBounds: bounds,
     center: [0, 0],
-    zoom: 0
+    zoom: 0,
+    zoomControl:false
   }).fitBounds(bounds);
 
   map.addLayer(

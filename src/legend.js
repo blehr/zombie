@@ -20,9 +20,24 @@ export const createLegend = () => {
       "transform",
       "translate(" + legendMargin.left + "," + legendMargin.top + ")"
     );
-
+  setupLegendToggle()
   return legendG;
 };
+
+const setupLegendToggle = () => {
+  const legend = document.getElementById('legend')
+  document.querySelector('.toggle-legend').addEventListener('click', function(e) {
+    if (legend.classList.contains("show-legend")) {
+      legend.classList.remove("show-legend");
+      legend.classList.add("hide-legend")
+      this.innerHTML = '<i class="fas fa-chevron-circle-right"></i>'
+    } else {
+      legend.classList.remove("hide-legend");
+      legend.classList.add("show-legend")
+      this.innerHTML = '<i class="fas fa-chevron-circle-left"></i>'
+    }
+  })
+}
 
 export const updateLegend = (selection, items, legendClick) => {
   selection.selectAll("g").remove();

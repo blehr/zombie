@@ -1,11 +1,7 @@
 import * as d3 from "d3";
 import moment from "moment";
 
-var margin = { top: 20, right: 20, bottom: 20, left: 20 },
-  width = 700 - margin.left - margin.right,
-  height = 100 - margin.top - margin.bottom;
-
-let x, rangeTitle, map;
+let x, rangeTitle, map, margin, width, height;
 
 export const createXScale = (initialExtent, width) => {
   x = d3
@@ -16,8 +12,12 @@ export const createXScale = (initialExtent, width) => {
   return x;
 };
 
-export const createXAxisGroup = (selection, width, height, margin, m) => {
-  m = map;
+export const createXAxisGroup = (selection, w, h, marg, m) => {
+  map = m;
+  width = w;
+  height = h;
+  margin = marg;
+
   const axisG = selection
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -27,7 +27,7 @@ export const createXAxisGroup = (selection, width, height, margin, m) => {
   return axisG;
 };
 
-export const createRangeTitle = (selection, margin) => {
+export const createRangeTitle = (selection, margin, width) => {
   rangeTitle = selection
     .append("g")
     .attr("transform", "translate(" + (width) / 2 + "," + margin.top / 2 + ")")
@@ -63,7 +63,7 @@ export const appendXAxis = (selection, x, height) => {
     .call(
       d3
         .axisBottom(x)
-        .ticks(10)
+        // .ticks(10)
         .tickPadding(0)
     )
     .attr("text-anchor", null)

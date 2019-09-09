@@ -33,8 +33,6 @@ body {
 
 #legend {
   position: absolute;
-  bottom: 150px;
-  left: 10px;
   z-index: 90;
   background-color: white;
   padding: 10px;
@@ -42,6 +40,7 @@ body {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  transition: all .5s linear;
 }
 
 .legend-g {
@@ -74,6 +73,26 @@ body {
 
 .tick text {
   font-size: .8rem;
+}
+
+.legend-toggle {
+  text-align: right;
+}
+
+.toggle-legend {
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+}
+
+.show-legend {
+  bottom: 150px;
+  left: 10px;
+}
+.hide-legend {
+  bottom: 150px;
+  left: -310px;
 }
 
 

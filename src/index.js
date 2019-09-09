@@ -25,12 +25,21 @@ import "leaflet.markercluster/dist/leaflet.markercluster";
 
 // bounds for state of Ohio
 const bounds = [[38.403202, -84.820159], [41.977523, -80.518693]];
-let ohio, counties, zombies, legendG, x, axisG, rangeTitle, brush, brushHandle, features;
+let ohio,
+  counties,
+  zombies,
+  legendG,
+  x,
+  axisG,
+  rangeTitle,
+  brush,
+  brushHandle,
+  features;
 
 let map = renderMap(bounds);
 
 loadData().then(res => {
-  console.log(res.zombies)
+  console.log(res.zombies);
   ohio = res.ohio;
   counties = res.counties;
   zombies = res.zombies;
@@ -45,9 +54,12 @@ const render = (map, ohio, counties, zombies) => {
   legendG = createLegend();
 
   const svg = d3.select("#overlay").append("svg");
+  const pageWidth = document.body.clientWidth;
+  console.log(pageWidth);
+  const brushContainerWidth = pageWidth < 800 ? pageWidth - 40 : 700;
 
   var margin = { top: 20, right: 20, bottom: 20, left: 20 },
-    width = 700 - margin.left - margin.right,
+    width = brushContainerWidth - margin.left - margin.right,
     height = 100 - margin.top - margin.bottom;
 
   const initialExtent = d3.extent(
@@ -61,7 +73,7 @@ const render = (map, ohio, counties, zombies) => {
 
   axisG = createXAxisGroup(svg, width, height, margin, map);
 
-  rangeTitle = createRangeTitle(svg, margin);
+  rangeTitle = createRangeTitle(svg, margin, width);
 
   appendXAxis(axisG, x, height);
 
@@ -86,7 +98,7 @@ const render = (map, ohio, counties, zombies) => {
         "translate(" + [d3.event.selection[1], -height / 4] + ")"
       );
 
-      // map.fitBounds(features)
+    // map.fitBounds(features)
   };
 
   [brush, brushHandle] = createBrush(
@@ -103,7 +115,6 @@ const render = (map, ohio, counties, zombies) => {
     const latLng = [...d.geometry.coordinates].reverse();
     map.flyTo(latLng, 15);
   }
- 
 
   const createRScaleDomain = items => {
     return d3.extent(items.map(d => d.properties.current_number_infected));
@@ -130,7 +141,7 @@ const render = (map, ohio, counties, zombies) => {
   const updateMarkersForBrush = (start, end) => {
     map.removeLayer(markerClusters);
 
-    markerClusters = new L.MarkerClusterGroup({animateAddingMarkers: true});
+    markerClusters = new L.MarkerClusterGroup({ animateAddingMarkers: true });
 
     features = getFilteredMarkers(start, end, zombies);
     rScale.domain(createRScaleDomain(features));
@@ -154,7 +165,7 @@ const render = (map, ohio, counties, zombies) => {
     const initial = getFilteredMarkers(null, null, zombies);
     rScale.domain(createRScaleDomain(initial));
     updateLegend(legendG, initial, legendClick);
-    markerClusters = L.markerClusterGroup({animateAddingMarkers: true});
+    markerClusters = L.markerClusterGroup({ animateAddingMarkers: true });
 
     initial.forEach(m => {
       const popup = `${m.properties.location_name}: Number Infected: ${m.properties.current_number_infected}`;
@@ -168,14 +179,10 @@ const render = (map, ohio, counties, zombies) => {
     });
 
     map.addLayer(markerClusters);
-    map.fitBounds(markerClusters.getBounds())
+    map.fitBounds(markerClusters.getBounds());
   };
-
-  
 
   // for initial display
   setRangeTitleText(rangeTitle, initialExtent[0], initialExtent[1]);
   addInitialMarkers();
-
-  
 };
