@@ -87,29 +87,10 @@ body {
 }
 
 .show-legend {
-  bottom: 150px;
+  top:10px;
   left: 10px;
 }
 .hide-legend {
-  bottom: 150px;
+  top: 10px;
   left: -310px;
 }
-
-
-
-
-/* svg {
-  position: relative;
-}
-
-path {
-  fill: #000;
-  fill-opacity: .2;
-  stroke: #fff;
-  stroke-width: 1.5px;
-}
-
-path:hover {
-  fill: white;
-  fill-opacity: .01;
-} */
